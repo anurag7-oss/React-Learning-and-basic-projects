@@ -37,13 +37,17 @@ function Card() {
     <div className=" bg-zinc-500 min-h-screen  flex flex-wrap justify-center items-center gap-10 ">
       {data.map((elem, index) => {
         return (
-          <div className="flex flex-col w-52 bg-zinc-100 rounded-md overflow-hidden">
+          <div
+            key={index}
+            className="flex flex-col w-52 bg-zinc-100 rounded-md overflow-hidden"
+          >
             <div className="h-full w-full ">
               <img className="object-cover h-40" src={elem.img} alt="img" />
             </div>
-            <div className=" w-full px-5 py-4">
-              <h1 className="text-2xl font-semibold uppercase text-center">{elem.name}</h1>
-              <p className="font-normal  mt-3 capitalize text-center ">{elem.discription}</p>
+            <div className="w-full flex flex-col text-center p-4 items-center gap-2">
+              <h1 className="text-2xl font-semibold uppercase ">{elem.name}</h1>
+              <p className="font-normal  capitalize">{elem.discription}</p>
+              <button className=" w-24 bg-orange-200 rounded-md text-sm overflow-hidden">Know More</button>
             </div>
           </div>
         );
